@@ -6,8 +6,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('carrier_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>                
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('street_address') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('city') ?></th>
@@ -24,7 +23,6 @@
             <?php foreach ($patients as $patient): ?>
             <tr>
                 <td><?= $this->Number->format($patient->id) ?></td>
-                <td><?= $patient->has('carrier') ? $this->Html->link($patient->carrier->name, ['controller' => 'Carriers', 'action' => 'view', $patient->carrier->id]) : '' ?></td>
                 <td><?= h($patient->name) ?></td>
                 <td><?= h($patient->street_address) ?></td>
                 <td><?= h($patient->city) ?></td>
