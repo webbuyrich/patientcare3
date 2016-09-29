@@ -31,22 +31,18 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Carrier Id') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('Patient Name') ?></th>
                 <th scope="col"><?= __('Street Address') ?></th>
                 <th scope="col"><?= __('City') ?></th>
                 <th scope="col"><?= __('State') ?></th>
                 <th scope="col"><?= __('Zipcode') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Phone') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($carrier->patients as $patients): ?>
             <tr>
                 <td><?= h($patients->id) ?></td>
-                <td><?= h($patients->carrier_id) ?></td>
                 <td><?= h($patients->name) ?></td>
                 <td><?= h($patients->street_address) ?></td>
                 <td><?= h($patients->city) ?></td>
@@ -54,8 +50,6 @@
                 <td><?= h($patients->zipcode) ?></td>
                 <td><?= h($patients->email) ?></td>
                 <td><?= h($patients->phone) ?></td>
-                <td><?= h($patients->created) ?></td>
-                <td><?= h($patients->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Patients', 'action' => 'view', $patients->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Patients', 'action' => 'edit', $patients->id]) ?>
