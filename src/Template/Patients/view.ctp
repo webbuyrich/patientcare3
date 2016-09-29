@@ -57,8 +57,6 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Doctor Name') ?></th>
                 <th scope="col"><?= __('Appointment Date') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($patient->appointments as $appointments): ?>
@@ -66,8 +64,6 @@
                 <td><?= h($appointments->id) ?></td>
                 <td><?= $this->Format->getName($appointments->doctor_id, 'doctors') ?></td>
                 <td><?= h($appointments->appointment_date) ?></td>
-                <td><?= h($appointments->created) ?></td>
-                <td><?= h($appointments->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Appointments', 'action' => 'view', $appointments->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Appointments', 'action' => 'edit', $appointments->id]) ?>
