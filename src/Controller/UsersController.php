@@ -11,6 +11,15 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
+    // Custom Pagination
+    public $paginate = [
+           'limit' => 10,
+           'order' => [
+               'Users.name' => 'asc'
+           ]
+       ];
+
+
     /**
      * Index method
      *
