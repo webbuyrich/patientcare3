@@ -63,7 +63,7 @@ class AppointmentsController extends AppController
             }
         }
         $patients = $this->Appointments->Patients->find('list', ['limit' => 200]);
-        $doctors = $this->Appointments->Doctors->find('list', ['limit' => 200]);
+        $doctors = $this->Appointments->Doctors->find('list', ['limit' => 200])->where(['accepting_patients' => 1]);
         $this->set(compact('appointment', 'patients', 'doctors'));
         $this->set('_serialize', ['appointment']);
     }
